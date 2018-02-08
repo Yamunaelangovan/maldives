@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/cropButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Crop"/>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Back"
+        android:visibility="gone"/>
+
+    <net.doo.snap.ui.EditPolygonImageView
+        android:id="@+id/polygonView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:edgeColor="#00cea6"
+        app:cornerImageSrc="@drawable/ui_crop_corner_handle"
+        app:edgeImageSrc="@drawable/ui_crop_side_handle"
+        app:editPolygonHandleSize="48dp"
+        app:magneticLineTreshold="10dp"
+        android:layout_above="@+id/cropButton"/>
+
+    <net.doo.snap.ui.MagnifierView
+        android:id="@+id/magnifier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:magnifierImageSrc="@drawable/ui_crop_magnifier"
+        app:magnifierCrossSize="16dp"
+        app:magnifierCrossStrokeWidth="2dp"
+        app:magnifierStrokeWidth="4dp"
+        app:magnifierRadius="36dp"
+        app:magnifierMargin="16dp"
+        app:editPolygonMagnifier="#fff"
+        android:layout_above="@+id/cropButton"/>
+
+    <ImageView
+        android:id="@+id/resultImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/backButton"
+        android:visibility="gone"/>
+
+</RelativeLayout>
